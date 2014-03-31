@@ -1,0 +1,216 @@
+{
+    "level": 1,
+    "number": 3,
+    "name": "Events and methods",
+    "description": "Now we'll start to connect some of our objects together, using Events and Methods, in order to start to make interesting things happen!",
+    "entities": [
+        "scene",
+        "sun",
+        "scoreboard",
+        "sandpit",
+        "athlete"
+    ],
+    "steps": [
+		{
+			"contents": "<p>Now we're going to make the athlete do a run and jump into the sand!</p>",
+			"stepClasses": [
+				"wide",
+				"below-stage"
+			],
+			"initActions": {
+				"setMode": "play",
+                "addEvents": [
+                    {
+                        "entity": "myScene",
+                        "event": "onStart",
+                        "targetEntity": "myAthlete",
+                        "targetMethod": "run"
+                    }
+                ]
+			}
+		},
+		{
+			"contents": "<p>To do this, we're going to add a new object to the stage, and learn about making objects work with each other.</p>"
+		},
+		{
+			"contents": "<p>First, we'll add a button to the stage, that will tell our athlete to perform a long jump.</p><p><instruction>Click the add new object button</instruction> to get a list of all the objects that we can add to our project:<p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": "#btn-addobject"
+			},
+			"stepClasses": [
+				"nudge-right"
+			],
+			"initActions": {
+				"setMode": "edit",
+				"removeEvents": [
+					{
+						"entity": "myScene",
+						"event": "onStart"
+					}
+				]
+			},
+			"actionToProceed": {
+				"element": "#btn-addobject",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p>We're going to add a button, so <instruction>click on the item labelled Button</instruction>...</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": ".add-Button"
+			},
+			"actionToProceed": {
+				"element": ".add-Button",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p>We can see a new button appear on the stage. You can <instruction>move it to the top-left of the stage</instruction> if you want to, by dragging it.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"stage": "myButton"
+			},
+            "enableInput": {
+                "dom": "#stage-canvas"
+            }
+		},
+		{
+			"contents": "<p>Great! We now have a new button<!-- properly set up and ready to go-->.</p><p>However, when we click on the button, nothing happens yet.</p><p>For that, we need to use <dfn>methods</dfn> and <dfn>events</dfn>.</p>"
+		},
+		{
+			"contents": "<p>First, <instruction>select our athlete object</instruction> again:</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"stage": "myAthlete"
+			},
+			"actionToProceed": {
+				"object": "myAthlete",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p>You can see a list of items on the left-hand side of the brackets.</p><p>These are known as <dfn>methods</dfn>, and can be thought of as actions that you can tell the object to do.</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": "#selected-entity .edit-methods"
+			}
+		},
+		{
+			"contents": "<p>You'll also notice that the methods are shown in the <dfn>edit panel</dfn> too.</p><p>If you click on a method, either here or in the edit panel, that method is selected in the main panel.</p>",
+			"arrowDirection": "bottom",
+			"stepClasses": [
+				"push-right"
+			],
+			"highlight": {
+				"dom": ".method-side-panel"
+			}
+		},
+		{
+			"contents": "<p>Objects also have a list of <dfn>events</dfn> on the right hand side.</p><p>Events can be thought of as things that can happen to that object.</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": "#selected-entity .edit-events"
+			}
+		},
+		{
+			"contents": "<p>We're going to look at the events for the button we added.</p><p>So <instruction>select the button</instruction> again:</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"stage": "myButton"
+			},
+			"stepClasses": [
+				"temp-button"
+			],
+			"actionToProceed": {
+				"object": "myButton",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p class=\"left\">Our button has 2 events defined:</p><p class=\"left\"><dfn>onClick</dfn> is an event that happens when the button is clicked by the user.</p><p class=\"left\"><dfn>onHover</dfn> is an event that happens when the user moves their mouse over the button.</p>",
+			"arrowDirection": "left",
+            "stepClasses": [
+                "wide"
+            ],
+			"highlight": {
+				"dom": "#selected-entity .edit-events"
+			}
+		},
+		{
+			"contents": "<p>In this case, we want to make the athlete perform his run and jump (i.e. call the <dfn>run</dfn> method) when the button is clicked (when the <dfn>onClick</dfn> event happens).</p><p>To do this, <instruction>click on the 'onClick' event</instruction> to start:</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": "#selected-entity [data-value='onClick']"
+			},
+			"actionToProceed": {
+				"element": "#selected-entity [data-value='onClick']",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p>Now take a look in the edit panel under 'Add a new connection'.</p><p><instruction>Select <dfn>myAthlete</dfn> here</instruction>:</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": "#edit-panel .event-binding-details .new [data-element='target-entity']"
+			},
+			"actionToProceed": {
+				"element": "#edit-panel .event-binding-details .new [data-element='target-entity']",
+				"type": "change"
+			}
+		},
+		{
+			"contents": "<p>Now <instruction>select <dfn>run</dfn> here</instruction>:</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": "#edit-panel .event-binding-details .new [data-element='target-method']"
+			},
+			"actionToProceed": {
+				"element": "#edit-panel .event-binding-details .new [data-element='target-method']",
+				"type": "change"
+			}
+		},
+		{
+			"contents": "<p>Now <instruction>click <dfn>Add</dfn></instruction>:</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": "#edit-panel .event-binding-details .new .save"
+			},
+			"actionToProceed": {
+				"element": "#edit-panel .event-binding-details .new .save",
+				"type": "select"
+			}
+
+		},
+		{
+			"contents": "<p>Now let's stop editing, and preview how the finished app will work.</p><p><instruction>Click the <dfn>Play</dfn> button</instruction> to switch to Play mode:</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"dom": "#btn-play"
+			},
+			"actionToProceed": {
+				"element": "#btn-play",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p><instruction>Go ahead and click the button</instruction>, and see the athlete run!</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"stage": "myButton"
+			},
+			"actionToProceed": {
+				"object": "myButton",
+                "type": "select"
+			},
+			"nextStepDelay": 4500
+		},
+		{
+			"contents": "<p>Well done!</p><p>You've now learned how to add objects to the stage and link events to methods to make things happen!</p>",
+			"stepClasses": [
+				"wide"
+			]
+		}
+    ]
+}

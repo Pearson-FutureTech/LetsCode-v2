@@ -1,0 +1,164 @@
+{
+    "name": "Athlete",
+    "default_instance_id": "myAthlete",
+    "description": "A potential world champion at long jumps",
+
+    "properties": [
+
+        {
+            "name": "id",
+            "value": "myAthlete",
+            "comment": "The identifier for this athlete",
+            "type": "string",
+            "read_only": true
+        },
+
+        {
+            "name": "left",
+            "value": 20,
+            "comment": "The horizontal position of this athlete",
+            "type": "int"
+        },
+
+        {
+            "name": "top",
+            "value": 230,
+            "comment": "The vertical position of this athlete",
+            "type": "int"
+        },
+
+        {
+            "name": "runDistance",
+            "value": 250,
+            "comment": "The distance that this athlete will run",
+            "type": "int"
+        },
+
+        {
+            "name": "jumpDistance",
+            "value": 250,
+            "comment": "The distance that this athlete will jump",
+            "type": "int"
+        },
+
+        {
+            "name": "jumpHeight",
+            "value": 250,
+            "comment": "The maximum height that this athlete will jump",
+            "type": "int"
+        },
+
+        {
+            "name": "width",
+            "value": 200,
+            "comment": "Width of this athlete",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "height",
+            "value": 200,
+            "comment": "Height of this athlete",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "sprite",
+            "value":
+            {
+                "frames":
+                {
+                    "width": 200,
+                    "height": 200,
+                    "numFrames": 10,
+                    "regX": 0,
+                    "regY": 0
+                },
+                "animations":
+                {
+                    "run": {
+                        "frames": [1, 2],
+                        "speed": 0.2
+                    },
+                    "jump": {
+                        "frames": [4, 3],
+                        "next": "stand",
+                        "speed": 2
+                    },
+                    "longJump": {
+                        "frames": [3, 7, 5, 6, 8],
+                        "next": "land",
+                        "speed": 0.14
+                    },
+                    "land": {
+                        "frames": [9],
+                        "next": false
+                    },
+                    "stand": {
+                        "frames": [0],
+                        "next": false
+                    }
+                },
+                "images": [
+                    "/img/game/athlete.png"
+                ]
+            },
+            "comment": "The 'sprite' defines the frames of animation",
+            "hidden": true
+        }
+
+    ],
+
+    "methods": [
+
+        {
+            "name": "longJump",
+            "body": "this.animate('longJump'); this.parabola({x: this.properties.jumpDistance, y: this.properties.jumpHeight}).duration(1);",
+            "comment": null
+        },
+
+        {
+            "name": "run",
+            "body": "this.animate('run'); this.move({x: this.properties.runDistance, y: 0}).accelerate().duration(1.2);",
+            "comment": null
+        }
+
+    ],
+
+    "events": [
+
+        {
+            "name": "onLongJumpEnd",
+            "listeners": [
+                {
+                    "entity_id": "mySun",
+                    "method_name": "smile"
+                },
+                {
+                    "entity_id": "myScoreboard",
+                    "method_name": "update"
+                }
+            ],
+            "comment": null
+        },
+
+        {
+            "name": "onRunEnd",
+            "listeners": [
+                {
+                    "entity_id": "mySandpit",
+                    "method_name": "checkJump"
+                },
+                {
+                    "entity_id": "myAthlete",
+                    "method_name": "longJump"
+                }
+            ],
+            "comment": null
+        }
+
+    ]
+
+}

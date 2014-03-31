@@ -1,0 +1,25 @@
+<div class="method-details">
+	{{#if selectedMethod}}
+	    {{#with selectedMethod}}
+	        {{#if comment}}
+                <h4 class="comment">{{comment}}</h4>
+	        {{/if}}
+	        <div class="code-view">{{{body}}}</div>
+	    {{/with}}
+	{{else}}
+	    <h3>{{entityId}} methods</h3>
+		<p>Methods are actions that this object can perform.</p>
+    	{{#each methods.editable}}
+    		<div class="method" data-element="method" data-method="{{name}}">
+    			<div class="name">{{name}}</div>
+    			<div class="description">{{comment}}</div>
+    		</div>
+    	{{/each}}
+    	{{#each methods.read_only}}
+    		<div class="method" data-element="method" data-method="{{name}}">
+    			<div class="name">{{name}}</div>
+    			<div class="description">{{comment}}</div>
+    		</div>
+    	{{/each}}
+	{{/if}}
+</div>

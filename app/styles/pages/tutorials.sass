@@ -1,0 +1,83 @@
+.tutorials-page
+
+    .level
+        font-size: $font-size-large
+        font-weight: bold
+        padding-left: 0
+
+    .level-next
+        text-align: right
+        padding-right: 0
+
+    .level-badge
+        background: #FFFAD5
+        margin-top: 15px
+        padding: 1rem 0 0.1rem 1rem
+        border: 2px solid rgb(167, 147, 44)
+        img
+            float: left
+            width: 1.5rem
+            height: 1.5rem
+            margin-right: 1rem
+        p
+            color: rgb(167, 147, 44)
+
+
+    @mixin item-arrow($arrowcol)
+        @include cssarrow-bottom(15px, 0px, clear, $arrowcol)
+        &:after
+            margin-left: -45%   // tweak for arrow position
+
+    .item
+        background: $col-ui-grey-xlight
+        @include item-arrow($col-ui-grey-xlight)
+
+        .details
+            max-height: 400px
+            overflow: hidden
+            transition: max-height 0.3s ease-in-out
+            -webkit-transition: max-height 0.3s ease-in-out
+            -moz-transition: max-height 0.3s ease-in-out
+
+        .inline-list,
+        .locked-message
+            opacity: 1
+            transition: opacity 0.3s ease-in-out
+            -webkit-transition: opacity 0.3s ease-in-out
+            -moz-transition: opacity 0.3s ease-in-out
+
+        .locked-message
+            color: $col-ui-dkgreen
+
+    .item.hidden
+        .details
+            max-height: 0
+        .inline-list,
+        .locked-message
+            opacity: 0
+
+    .item.completed
+        .title:after
+            padding-left: 0.5rem
+            content: url(../img/tick-25.png)
+
+    .item.next
+        background: #E2F1C4
+        @include item-arrow(#E2F1C4)
+
+    .item.locked
+        background: $col-ui-grey-xxlight
+        @include item-arrow($col-ui-grey-xxlight)
+
+        .title
+            margin-bottom: 0
+            color: $col-ui-grey-xlight
+
+        .locked-message
+            float: right
+            margin-top: 0.5rem
+            font-size: 0.9rem
+
+    .item.next
+        cursor: default
+

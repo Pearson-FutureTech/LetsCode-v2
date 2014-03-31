@@ -1,0 +1,10 @@
+<div class="side-panel events-side-panel">
+	<div class="element-list" data-control="element-list">
+		{{#each events}}
+            {{#unless hidden}}
+                <div data-control="element" class="element {{#if selected}}selected{{/if}}" data-value="{{name}}">{{name}}</div>
+            {{/unless}}
+		{{/each}}
+	</div>
+	<!--<div class="add-event">Add New Event</div>-->
+</div>

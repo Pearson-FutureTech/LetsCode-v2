@@ -1,0 +1,75 @@
+<div class="event-binding-details">
+	<h3>{{triggerEntity.id}} events</h3>
+	<p>Connect your events to methods here.</p>
+
+	<div class="new">
+		<h4>Add a new connection</h4>
+		<div class="trigger step" data-element="trigger-entity">
+			<div class="preview">
+			</div>
+			<div class="button tiny green round disabled">{{triggerEntity.id}}</div>
+		</div>
+
+		<div class="step"><span>:</span></div>
+
+		<div class="event step">
+            <select class="button tiny round blue select" data-element="trigger-event">
+                {{#each triggerEvents}}
+                    <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+		</div>
+
+		<div class="step"> <span>→</span> </div>
+
+		<div class="target step">
+			<div class="preview">
+			</div>
+
+			<select class="button tiny green round select" data-element="target-entity">
+                {{#each targetEntities}}
+                    <option value="{{id}}">{{id}}</option>
+                {{/each}}
+            </select>
+		</div>
+
+		<div class="step"><span>:</span></div>
+
+		<div class="method step">
+			<select class="button tiny round blue select" data-element="target-method"></select>
+		</div>
+
+		<div class="step">&nbsp;&nbsp;&nbsp;</div>
+
+		<div class="save button tiny round orange" data-element="add">Add</div>
+	</div>
+
+	<div class="current">
+		<h4>Connections</h4>
+		{{#each bindings}}
+			<div class="binding">
+				<div class="trigger step">
+					<div class="preview">
+					</div>
+					<div class="button tiny round disabled">{{triggerEntityId}}</div>
+				</div>
+				<div class="step"><span>:</span></div>
+				<div class="event step">
+					<div class="button tiny round blue disabled">{{triggerEvent}}</div>
+				</div>
+				<div class="step"> <span>→</span> </div>
+				<div class="trigger step">
+					<div class="preview">
+					</div>
+					<div class="button tiny round disabled">{{targetEntity}}</div>
+				</div>
+				<div class="step"><span>:</span></div>
+				<div class="event step">
+					<div class="button tiny round blue disabled">{{targetMethod}}</div>
+				</div>
+				<div class="step">&nbsp;&nbsp;&nbsp;</div>
+				<div class="button tiny round orange delete" data-element="remove" data-entity="{{triggerEntityId}}" data-event="{{triggerEvent}}" data-target="{{targetEntity}}" data-method="{{targetMethod}}">Remove</div>
+			</div>
+		{{/each}}
+	</div>
+</div>

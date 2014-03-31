@@ -1,0 +1,72 @@
+{
+	"level": 1,
+	"number": 1,
+	"name": "Introduction to the Let's Code editing screen",
+	"description": "Let's get started with Let's Code with a quick overview of the interface, and an introduction to the stage where we create our apps.",
+	"entities": [
+		"scene",
+		"sun",
+		"scoreboard",
+		"sandpit",
+		"athlete"
+	],
+    "steps": [
+        {
+            "contents": "<p>This is the main screen of Let's Code.</p><p>Let's take a tour...</p>"
+        },
+        {
+            "contents":"<p>This central area is called the <dfn>Stage</dfn>, and it's where the app that you're creating is displayed.</p>",
+			"highlight": {
+				"dom": "#stage-canvas"
+			}
+        },
+        {
+            "contents": "<p>At the top is a <dfn>toolbar</dfn>, where you can do a number of things on the project you're working on.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"dom": ".top-bar-section .right"
+			}
+        },
+        {
+            "contents": "<p>The name of the project or lesson that you're working on is shown here.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"dom": "#tutorial-name"
+			}
+        },
+		{
+			"contents": "<p>Click on your <dfn>username</dfn> to <dfn>sign out</dfn> when you're finished working.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"dom": "#btn-username"
+			}
+		},
+        {
+            "contents": "<p> You can <dfn>close</dfn> the project and return to the home screen at any time.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"dom": "#btn-close"
+			}
+        },
+		{
+			"contents": "<p>Click on <dfn>Help</dfn> at any time to get assistance on what you're doing.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"dom": ".help > a"
+			}
+		},
+        {
+            "contents": "<p>Below the stage is the <dfn>editing panel</dfn>, where we can edit the parts of our project.</p><p>We'll start using this in the next tutorial.</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": "#edit-panel"
+			}
+        },
+		{
+			"contents": "<p>That's it for the first lesson! Let's recap:</p><p>The <dfn>stage</dfn> contains the app that we're creating</p><p>The <dfn>edit panel</dfn> is where we edit our app</p><p>The <dfn>toolbar</dfn> has other project controls, and where we can get help</p><p>In the next lesson, we'll start to create our first app!</p>",
+            "stepClasses": [
+                "wide"
+            ]
+		}
+	]
+}

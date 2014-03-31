@@ -1,0 +1,106 @@
+{
+    "name": "Sandpit",
+    "default_instance_id": "mySandpit",
+    "description": "A sandpit and jumping board for long jumps",
+
+    "properties": [
+
+        {
+            "name": "id",
+            "value": "mySandpit",
+            "comment": "The identifier for this sandpit",
+            "type": "string",
+            "read_only": true
+        },
+
+        {
+            "name": "left",
+            "value": 400,
+            "comment": "The horizontal position of this sandpit",
+            "type": "int"
+        },
+
+        {
+            "name": "top",
+            "value": 362,
+            "comment": "The vertical position of this sandpit",
+            "type": "int"
+        },
+
+        {
+            "name": "width",
+            "value": 359,
+            "comment": "Width of this sandpit",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "height",
+            "value": 86,
+            "comment": "Height of this sandpit",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "sprite",
+            "value":
+            {
+                "frames":
+                {
+                    "width": 359,
+                    "height": 86,
+                    "numFrames": 1,
+                    "regX": 0,
+                    "regY": 0
+                },
+                "animations":
+                {
+                },
+                "images": [
+                    "/img/game/sandpit.png"
+                ]
+            },
+            "comment": "The 'sprite' defines the frames of animation",
+            "hidden": true
+        }
+
+    ],
+
+    "methods": [
+
+        {
+            "name": "checkJump",
+            "body": "var athlete = caller; if( athlete.left + athlete.width / 2 > this.properties.left ) { this.trigger('onFoulJump'); } else { this.trigger('onCleanJump'); }",
+            "comment": null
+        }
+
+    ],
+
+    "events": [
+
+        {
+            "name": "onFoulJump",
+            "listeners": [
+                {
+                    "entity_id": "myScoreboard",
+                    "method_name": "setFoul"
+                }
+            ],
+            "comment": null
+        },
+        {
+            "name": "onCleanJump",
+            "listeners": [
+                {
+                    "entity_id": "myScoreboard",
+                    "method_name": "setClean"
+                }
+            ],
+            "comment": null
+        }
+
+    ]
+
+}

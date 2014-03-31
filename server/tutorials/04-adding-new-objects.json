@@ -1,0 +1,15 @@
+{
+    "level": 1,
+    "number": 4,
+    "name": "Adding new objects",
+    "description": "This tutorial is under construction, and will follow later.",
+    "entities": [
+        "scene",
+        "sun",
+        "scoreboard",
+        "sandpit",
+        "athlete"
+    ],
+    "steps": [
+    ]
+}

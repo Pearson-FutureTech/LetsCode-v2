@@ -1,0 +1,207 @@
+.row.editor
+    position: fixed
+    bottom: 0
+
+#edit-panel
+    position: absolute
+    bottom: -300px
+    transition: bottom 0.3s
+    -webkit-transition: bottom 0.3s
+    -moz-transition: bottom 0.3s
+    width: 100%
+    height: rem-calc(280)
+    background-color: #333
+    padding: rem-calc(8)
+
+    &.animate-open
+        bottom: 0
+
+    .entities-controls
+        select.button
+            border-top-right-radius: 1000px
+            border-bottom-right-radius: 1000px
+            width: 125px
+            height: 26px
+            background-position-x: 92%
+        a.button
+            margin-left: 6px
+            border-top-left-radius: 1000px
+            border-bottom-left-radius: 1000px
+
+        #select-label
+            display: none
+
+    .tabs
+        margin-top: rem-calc(8)
+        margin-bottom: 0 !important
+
+        dd
+            background: #444
+            border-top-left-radius: rem-calc(14)
+            border-top-right-radius: rem-calc(14)
+            border-top: 3px solid $col-ui-grey-xxlight
+            border-left: 1px solid #111
+            border-right: 1px solid #000
+            padding-top: rem-calc(3)
+            cursor: default
+
+            a
+                padding: 0.2rem 0 0.4rem 0
+                color: $white
+                font-size: $font-size-norm
+                line-height: 0.9rem
+
+        dd.active
+            background: $col-tab-sel
+            border-top: 3px solid $col-ui-orange
+            a
+                color: $col-ui-ltorange
+                font-weight: bold
+
+    .side-panel
+
+        overflow: auto
+        background: #444
+        height: 202px
+        position: absolute
+        top: 70px
+        bottom: 80px
+        width: 180px
+
+        &.active
+            background-color: $col-tab-sel
+
+        .element-list
+            padding: 8px
+
+        .element
+            font-size: $font-size-norm
+            cursor: pointer
+            margin-bottom: 6px
+            padding: 0 10px
+            line-height: 1.5rem
+            background-color: $col-ui-grey-xlight
+            color: $col-ui-grey
+
+        &.active
+            .element
+                background-color: $white
+                &.selected
+                    background-color: $col-ui-blue
+
+        &.method-side-panel
+            left: 8px
+            border-bottom-left-radius: rem-calc(3)
+            border-left: 1px solid #111
+            .element-list
+                padding-right: 12px
+                .element:hover
+                    @include cssarrow-right(12px, 0px, clear, $white)
+                .element.selected
+                    @include cssarrow-right(12px, 0px, clear, $col-ui-blue)
+
+        &.events-side-panel
+            right: 8px
+            border-bottom-right-radius: rem-calc(3)
+            border-right: 1px solid #111
+            .element-list
+                padding-left: 12px
+                .element:hover
+                    @include cssarrow-left(12px, 0px, clear, $white)
+                .element.selected
+                    @include cssarrow-left(12px, 0px, clear, $col-ui-blue)
+
+    .details
+        position: absolute
+        top: 70px
+        bottom: 8px
+        left: 188px
+        right: 188px
+        overflow-y: auto
+        border-radius: 3px
+        padding: 12px
+        background: #666
+        box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.05), -4px 2px 4px rgba(0, 0, 0, 0.05), -4px -2px 4px rgba(0, 0, 0, 0.05)
+        border-left: 1px solid #737373
+        border-top: 1px solid #737373
+        border-right: 1px solid #737373
+
+        h3
+            color: $col-ui-ltorange
+            text-align: center
+            font-size: $font-size-large
+
+        h4, p
+            color: $white
+            font-size: $font-size-norm
+
+        h4
+            margin: 1rem 0 0.5rem 0
+
+        .property
+            clear: left
+
+            .name
+                float: left
+                width: 130px
+                height: 22px
+                font-size: $font-size-norm
+                background-color: $white
+                margin-right: 3px
+                padding: 3px 6px
+
+            .value
+                float: left
+
+                input
+                    width: 130px
+                    height: 22px
+                    font-size: $font-size-norm
+                    padding: 0px 6px
+                    margin: 0 6px 6px 0
+                    background-color: $col-ui-ltblue
+                    border: none
+                    box-shadow: none
+                    -webkit-box-shadow: none
+                    &:hover
+                        background-color: $col-ui-blue
+                    &.disabled
+                        background-color: $col-ui-grey-xxlight
+                        &:hover
+                            background-color: $col-ui-grey-xxlight
+
+            .description
+                font-size: $font-size-norm
+                padding-top: 3px
+                color: $col-ui-grey-xxlight
+                white-space: nowrap
+                overflow: hidden
+                text-overflow: ellipsis
+
+        .method-details .method,
+        .event-details .event
+            color: $col-ui-grey-xxlight
+            &:hover
+                background-color: $col-ui-ltblue
+                color: black
+
+        .code-view
+            width: 100%
+            height: 185px
+
+        /* Event bindings */
+        .binding
+            margin-bottom: 1rem
+
+        .button.disabled
+            background-color: #008cba
+
+        .step
+            display: inline-block
+            line-height: 1.2rem
+
+            span
+                font-size: $font-size-small
+                font-weight: bold
+                color: $white
+

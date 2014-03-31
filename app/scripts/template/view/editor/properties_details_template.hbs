@@ -1,0 +1,18 @@
+<div class="property-details">
+    {{#if entityId}}
+        <h3>{{entityId}} properties</h3>
+        {{#each properties}}
+            {{#unless hidden}}
+                <div class="property" data-element="property">
+                    <div class="name">{{name}}</div>
+                    <div class="value">
+                        <input type="text" value="{{value}}" {{#if read_only}}class="disabled" disabled{{/if}} data-name="{{name}}" />
+                    </div>
+                    <div class="description">{{comment}}</div>
+                </div>
+            {{/unless}}
+        {{/each}}
+    {{else}}
+        <h3>Select an object to get started</h3>
+    {{/if}}
+</div>

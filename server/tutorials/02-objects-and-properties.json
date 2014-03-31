@@ -1,0 +1,126 @@
+{
+	"level": 1,
+	"number": 2,
+	"name": "Objects and properties",
+	"description": "Tutorial 2 introduces objects, and and how change them by altering their properties.",
+	"entities": [
+		"scene",
+		"sun",
+		"scoreboard",
+		"sandpit",
+		"athlete"
+	],
+	"steps": [
+		{
+			"contents": "<p>Let's Code apps are made up of <dfn>objects</dfn> that are placed on the stage.</p>",
+			"highlight": {
+				"dom": "#stage-canvas"
+			}
+		},
+		{
+			"contents": "<p>Each object can be edited and made to work with other objects.</p>"
+		},
+		{
+			"contents": "<p>We can select objects to view and change them.</p><p><instruction>Select the athlete object now</instruction> by clicking on the object on the stage.</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"stage": "myAthlete"
+			},
+			"actionToProceed": {
+				"object": "myAthlete",
+				"type": "select"
+			}
+		},
+		{
+			"contents": "<p>On top is a box with the name, or <dfn>id</dfn> of the object. We can see that this object has the id <dfn>myAthlete</dfn>.</p>",
+			"arrowDirection": "top",
+			"highlight": {
+				"stage": "myAthlete"
+			}
+		},
+		{
+			"contents": "<p>The id of the object we selected is shown in the <dfn>object selector</dfn> box here.</p><p>We can also select an object by clicking this box and choosing from a list of all the objects on the stage.</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": "#edit-panel .controls select"
+			}
+		},
+		{
+			"contents": "<p>Each object has a number of different <dfn>properties</dfn>.</p><p>The <dfn>properties tab</dfn> below allows us to edit the properties for the selected object.</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": "#edit-panel .tabs-container dd:eq(1)"
+			},
+			"initActions": {
+				"showEditTab": "#panel-properties"
+			}
+		},
+		{
+			"contents": "<p>The <em>id</em> is known as a <dfn>property</dfn> of the object, so we can say the property with the <dfn>name</dfn> 'id' has the <dfn>value</dfn> 'myAthlete'.</p>",
+			"arrowDirection": "bottom",
+			"highlight": {
+				"dom": ".property-details .property:eq(0)"
+			},
+			"initActions": {
+				"showEditTab": "#panel-properties"
+			}
+		},
+		{
+			"contents": "<p>Similarly, the <em>left</em> and <em>top</em> properties of each object control its position on the stage.</p><p><instruction>Click and drag on the object</instruction> to move it on the stage, and you can see the left and top values update.</p>",
+			"arrowDirection": "left",
+			"stepClasses": [
+				"athlete-edit"
+			],
+			"highlight": {
+				"stage": "myAthlete"
+			},
+            "enableInput": {
+                "dom": "#stage-canvas"
+            },
+			"initActions": {
+				"showEditTab": "#panel-properties"
+			},
+			"actionToProceed": {
+				"object": "myAthlete",
+				"type": "update",
+				"property": "left"
+			}
+		},
+		{
+			"contents": "<p>You can see that the left and top values have changed to reflect the new position.</p><p>We can also edit the properties here.</p><p><instruction>Click on the value for the left property, change it to 50, and press enter</instruction>:</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": ".property-details .property:eq(1) .value"
+			},
+			"initActions": {
+				"showEditTab": "#panel-properties"
+			},
+            "enableInput": {
+                "dom": ".property-details .property:eq(1) .value"
+            },
+			"actionToProceed": {
+				"object": "myAthlete",
+				"type": "update",
+				"property": "left"
+			}
+		},
+		{
+			"contents": "<p>Now <instruction>change the top property to 200</instruction> in the same way.</p>",
+			"arrowDirection": "left",
+			"highlight": {
+				"dom": ".property-details .property:eq(2) .value"
+			},
+            "enableInput": {
+                "dom": ".property-details .property:eq(2) .value"
+            },
+			"actionToProceed": {
+				"object": "myAthlete",
+				"type": "update",
+				"property": "top"
+			}
+		},
+		{
+			"contents": "<p>Well done! You've learned the basics of Let's Code!, and how to view and edit properties.</p><p>In the next lesson, we'll add a new object to the stage, and make the athlete do something!</p>"
+		}
+	]
+}

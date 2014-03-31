@@ -1,0 +1,34 @@
+<div class="entities-controls">
+
+    <ul class="button-group round">
+        <li>
+            <span id="select-label">Objects</span>
+            <select class="button tiny green" data-control="entities" aria-labelledby="select-label">
+                {{#each stageEntities}}
+                    <option value="{{id}}">{{id}}</option>
+                {{/each}}
+            </select>
+        </li>
+		<li>
+            <a id="btn-addobject" class="button tiny green" data-control="add-entity">+</a>
+        </li>
+    </ul>
+</div>
+
+
+<div id="entity-library" class="entity-library" data-control="entity-library">
+    <p class="title">
+        Add New Object <a href="#" class="close-button">Close</a>
+    </p>
+
+    <ul>
+        {{#each libraryEntities}}
+            <li data-entity-id="{{id}}" class="add-{{name}}">
+                <img src="/img/game/thumb-{{name}}.png">
+                <p class="name">{{name}}</p>
+                <p class="desc">{{description}}</p>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+

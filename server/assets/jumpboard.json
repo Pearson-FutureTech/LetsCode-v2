@@ -1,0 +1,79 @@
+{
+    "name": "Jump Board",
+    "default_instance_id": "myJumpBoard",
+    "description": "Make sure you jump on or before the board",
+
+    "properties": [
+
+        {
+            "name": "id",
+            "value": "myJumpBoard",
+            "comment": "The identifier for this jump board",
+            "type": "string",
+            "read_only": true
+        },
+
+        {
+            "name": "left",
+            "value": 400,
+            "comment": "The horizontal position of this jump board",
+            "type": "int"
+        },
+
+        {
+            "name": "top",
+            "value": 400,
+            "comment": "The vertical position of this jump board",
+            "type": "int"
+        },
+
+        {
+            "name": "width",
+            "value": 45,
+            "comment": "Width of this jump board",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "height",
+            "value": 86,
+            "comment": "Height of this jump board",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "sprite",
+            "value": {
+                "frames": {
+                    "width": 45,
+                    "height": 86,
+                    "numFrames": 1,
+                    "regX": 0,
+                    "regY": 0
+                },
+                "animations": {},
+                "images": [
+                    "/img/game/jumpboard.png"
+                ]
+            },
+            "comment": "The 'sprite' defines the frames of animation",
+            "hidden": true
+        }
+
+    ],
+
+    "methods": [
+
+        {
+            "name": "checkJump",
+            "body": "",
+            "comment": null
+        }
+
+    ],
+
+    "events": []
+
+}

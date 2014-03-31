@@ -1,0 +1,13 @@
+{{#if isLoggedIn}}
+    <ul>
+        <li class="user">
+
+                <a href="#" data-dropdown="user-drop" id="btn-username">{{username}}</a>
+
+                <div id="user-drop" data-dropdown-content class="popup dropdown-popup small content">
+                    <button id="btn-signout" class="green round tiny">Sign Out</button>
+                    <p>Sign out from your account</p>
+                </div>
+        </li>
+    </ul>
+{{/if}}

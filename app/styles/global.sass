@@ -1,0 +1,380 @@
+// Base Colours - TODO: consolidate into standard UI colours
+$white: white
+$black: black
+$light-grey: hsl(0, 0%, 70%)
+$uncertain-grey: hsl(0, 0%, 60%)
+$mid-grey: hsl(0, 0%, 40%)
+$dark-grey: hsl(0, 0%, 20%)
+$sky-blue: hsl(200, 100%, 70%)
+$sky-blue-hover: hsl(200, 100%, 85%)
+$guaci-green: hsl(80, 60%, 50%)
+$subtle-red: hsl(360, 65%, 53%)
+
+$standard-bg: $white
+$standard-text: $black
+$standard-title: $guaci-green
+$standard-hyperlink: $sky-blue
+
+$button-text: $white
+
+// Standard UI Colours
+$col-ui-green: #99cc33
+$col-ui-ltgreen: lighten($col-ui-green, 15%)
+$col-ui-dkgreen: darken($col-ui-green, 15%)
+$col-ui-blue: #66ccff
+$col-ui-ltblue: lighten($col-ui-blue, 15%) //#b3e6ff
+$col-ui-dkblue: darken($col-ui-blue, 15%)
+$col-ui-orange: #ff6633
+$col-ui-ltorange: lighten($col-ui-orange, 15%) //#ff9f80
+$col-ui-dkorange: darken($col-ui-orange, 15%)
+$col-ui-grey: #666666
+$col-ui-ltgrey: #999999
+$col-ui-grey-xlight: #b3b3b3
+$col-ui-grey-xxlight: #e6e6e6
+$col-ui-dkgrey: #333333
+$col-ui-error: rgb(230, 126, 126)
+$col-ui-error-light: rgb(255, 200, 200)
+
+// Colours for UI components
+$col-background: #333333
+
+$col-text: $col-ui-dkgrey
+$col-text-disabled: transparent($col-text, 50%)
+$col-text-sel: $col-ui-blue
+$col-text-highlight: $col-text
+
+$col-button-default: $col-ui-dkblue
+$col-button-default-hover: $col-ui-blue
+$col-button-desel: #888888
+$col-button-disabled: $col-ui-grey-xlight
+$col-button-text: white
+//$col-button-text-disabled: $col-ui-ltgrey; //transparent($col-button-text, 50%);
+$col-button-toolbar: $col-ui-dkgreen
+$col-button-toolbar-text: white
+
+$col-tab: #444444
+$col-tab-sel: #666666
+$col-tab-top: white
+$col-tab-top-sel: #ff6633
+
+$col-panellist: white
+$col-panellist-sel: lighten($col-ui-blue, 0%)
+$col-panellist-disabled: #999999
+$col-panellist-hover: lighten($col-ui-blue, 20%)
+$col-detailspanel: $col-tab
+$col-detailspanel-sel: $col-tab-sel
+
+$col-stage-label-bg: #444444
+$col-stage-label-highlight: $col-ui-blue
+$col-stage-label-connectmarker: $col-ui-orange
+$col-stage-label-text: white
+
+
+// Font defaults
+$font-family: "Roboto", sans-serif
+
+$font-size-header: 2.25rem
+$font-size-subheader: 1.25rem
+$font-size-large: 1rem
+$font-size-norm: 0.9rem
+$font-size-small: 0.8rem
+$font-size-smallest: 0.7rem
+
+$font-weight-header: 600
+$font-weight-subheader: 600
+$font-weight-norm: 300
+$font-weight-bold: 600
+
+
+// Geometry
+$min-width: 768px
+// Default spacer between UI components
+$ui-spacing: 8px
+$ui-spc: 8px
+// spacer between list items
+$ui-spc-list: round($ui-spc / 3)
+$ui-bradius: 14px
+$button-height: 20px
+$top-bar-height: 40px
+$toolbar-inner-height: 25px
+$tab-height: 20px
+$tab-top: $tab-height + 15px
+$panellist-width: 180px
+$panellist-height: 20px
+$bracket-width: 20%
+$bracket-thickness: 10px
+$bracket-item-height: 20px
+$edit-panel-height: 280px
+$lesson-panel-height: 25px
+$footer-height: 34px
+
+$stage-width: 800px
+$stage-height: 450px
+
+html,
+body,
+#main,
+#main > div,
+#content,
+#content > div,
+#ide,
+#ide > div
+    height: 100%
+
+#content
+    height: calc(100% - #{$footer-height})
+    height: -webkit-calc(100% - #{$footer-height})
+    height: -moz-calc(100% - #{$footer-height})
+
+.small
+    font-size: $font-size-small
+.medium
+    font-size: $font-size-norm
+.large
+    font-size: $font-size-large
+
+body
+    font-family: 'Roboto', sans-serif
+    color: $col-ui-dkgrey
+    font-size: $font-size-norm
+    font-weight: $font-weight-norm
+    overflow: hidden
+
+p
+    font-size: $font-size-norm
+    font-weight: $font-weight-norm
+    margin-bottom: 0.5rem
+
+a
+    text-decoration: none
+
+li
+    font-size: $font-size-norm
+
+h1, h2
+    font-size: $font-size-header
+    font-weight: $font-weight-header
+    color: $col-ui-dkblue
+
+h3
+    font-size: $font-size-subheader
+
+h4, h5, h6
+    font-size: $font-size-norm
+
+h3, h4
+    color: $col-ui-grey
+    font-weight: $font-weight-subheader
+    margin-bottom: rem-calc(10)
+
+h5, h6
+    font-weight: $font-weight-norm
+    text-decoration: underline
+
+h1 .beta
+    font-style: italic
+    color: $col-ui-blue
+
+.row.row.full-width,
+.row.full-width
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+    max-width: initial
+
+.columns.full-width
+    margin-left: 0
+    margin-right: 0
+    padding-left: 0
+    padding-right: 0
+
+.shadow
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5)
+
+// IDE
+#ide
+    position: fixed
+    top: 40px
+    width: 100%
+
+// Buttons
+button,
+.button,
+a.button
+    font-size: $font-size-norm
+    font-weight: $font-weight-norm
+    text-decoration: none
+    margin: 0 0
+    background: $col-button-default
+    &:hover
+        background: $col-button-default-hover
+
+    &.tiny
+        font-size: $font-size-norm
+        padding-top: 0.325rem
+        padding-right: 0.95rem
+        padding-bottom: 0.2875rem
+        padding-left: 0.95rem
+
+    &.blue
+        background: $col-ui-dkblue
+        &:hover
+            background: $col-ui-blue
+
+    &.green
+        background: $col-ui-dkgreen
+        &:hover
+            background: $col-ui-green
+
+    &.orange
+        background: $col-ui-dkorange
+        &:hover
+            background: $col-ui-orange
+
+    &.inactive
+        background: $col-ui-grey
+        &:hover
+            background: $col-ui-ltgrey
+
+    &.disabled
+        pointer-events: none
+        cursor: default
+        background: $col-button-disabled
+        &:hover
+            background: $col-button-disabled
+
+
+// Override ugly Foundation default
+.button-group > * > button,
+.button-group > * > .button,
+.button-group.round > * > button,
+.button-group.round > * > .button
+    border-right: 0
+
+
+// Force label to look like standard para text without the margin
+label
+    p
+        margin-bottom: 0
+
+
+#content
+    position: absolute
+    top: $top-bar-height
+    bottom: $footer-height
+    overflow-y: auto
+    width: 100%
+    height: 100%
+    height: calc(100% - #{$top-bar-height} - #{$footer-height})
+    height: -webkit-calc(100% - #{$top-bar-height} - #{$footer-height})
+    height: -moz-calc(100% - #{$top-bar-height} - #{$footer-height})
+
+#main.project #content
+    display: none
+
+small p,
+small h4,
+small h5,
+small h6
+    margin-bottom: 0.5rem
+
+// Tabs
+.tabs dd > a
+    background: none
+    padding: 0.5rem
+    margin-right: 1rem
+
+.tabs dd > a:hover
+    background: none
+
+.tabs dd.active a
+    background: none
+
+.tabs-content > .content
+    float: none
+
+
+// Overlay
+#overlay
+    z-index: 100
+
+.disable-input
+    pointer-events: none
+
+.enable-input
+    pointer-events: auto
+
+#above-footer-links
+    font-size: $font-size-small
+    text-align: center
+    margin-top: 2.5rem
+    padding-bottom: 1rem
+
+// Footer
+footer
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: $footer-height
+    background-color: $col-ui-dkgrey
+
+    .pearson,
+    .always-learning
+        height: $footer-height
+        margin: 0
+
+.project footer
+    display: none
+
+
+// Browser warning message hidden by default
+.browser-warning-message
+    display: none
+    margin-bottom: 1rem
+
+    .message
+        background-color: $col-ui-error-light
+        padding: 10px
+
+
+// Unsupported browsers
+
+@mixin completely-unsupported-browser()
+
+    /* Display unsupported message */
+    .browser-warning-message
+        display: block !important
+
+    /* Hide sign up / sign in */
+    .new-users-existing-users
+        display: none
+
+@mixin not-recommended-browser()
+
+    /* Display unsupported message */
+    .browser-warning-message
+        display: block !important
+
+
+// Things that are most definitely required: JavaScript, Canvas support, History support...
+.no-js, .no-canvas, .no-history
+    @include completely-unsupported-browser()
+
+// Things that are going to impact on usage, but where it may be still possible to use the app...
+// In this case, warn, but allow user to proceed if they really want to.
+.no-csstransitions
+    @include not-recommended-browser
+
+
+// FIXME Quick "fixes" for IE10 and IE11 (See: http://www.adaodesign.com/css-styles-for-ie10-and-ie11-only/)
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+
+    // Show the browser warning message
+    @include not-recommended-browser()
+
+    // To avoid EaselJS bug in IE with 'pointer-events: none' on parent element. Click event not triggered otherwise.
+    .disable-input
+        pointer-events: auto
+
+

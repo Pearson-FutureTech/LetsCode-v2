@@ -1,0 +1,78 @@
+<div class="tutorials-page list-page">
+    <div class="row">
+        <div class="medium-11 medium-centered columns">
+
+			<div class="row">
+				<dl class="tabs" data-tab>
+					<dd class="active"><a href="/tutorials" data-clientside="true">Tutorials</a></dd>
+					<dd><a href="/projects" data-clientside="true">My projects</a></dd>
+				</dl>
+			</div>
+
+            <div class="row">
+                <p class="small-4 columns level">Level 1: Introduction</p>
+            </div>
+            <div class="row">
+                <p>Complete each tutorial to unlock new features in Let's Code and score badges!</p>
+            </div>
+
+            <div class="row">
+                <div id="panel-tutorials">
+
+                    {{#each tutorials}}
+                       <div class="item
+                            {{#if completed}}completed hidden{{/if}}
+                            {{#if next}}next{{/if}}
+                            {{#if locked}}locked hidden{{/if}}">
+                            <div class="row">
+                                <div class="small-12 medium-8 columns text-left">
+                                    <p class="title">{{number}}. {{name}}</p>
+                                </div>
+                                <div class="small-12 medium-4 columns">
+                                    {{#ifCond completed '||' next}}
+                                        <ul class="inline-list">
+                                            {{#if completed}}
+                                                <li>
+                                                    <a href="#" class="tiny button round green" data-action="resume" data-tutorialId="{{_id}}" data-projectId="{{project_id}}">Resume</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tiny button round orange" data-action="restart" data-tutorialId="{{_id}}">Restart</a>
+                                                </li>
+                                            {{/if}}
+                                            {{#if next}}
+                                                <li>
+                                                    {{! TEMP! Limit to 3 tutorials - until we add more }}
+                                                    <a href="#" class="tiny button round green {{#ifCond ../../../user.next_tutorial_number '>' 3}}disabled{{/ifCond}}" data-action="begin" data-tutorialId="{{_id}}">Begin</a>
+                                                </li>
+                                            {{/if}}
+                                        </ul>
+                                    {{/ifCond}}
+                                    {{#if locked}}
+                                        <span class="locked-message">Complete <strong>tutorial {{../../user.next_tutorial_number}}</strong> first</span>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <div class="row details">
+                                <div class="small-12 medium-3 columns">
+                                    <img class="th radius" src="img/tutorials/tutorial-1-340x150.png" alt="Tutorial thumbnail preview" />
+                                </div>
+                                <div class="small-12 medium-9 columns">
+                                    <p class="description">{{description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+
+                    <div class="level-badge">
+                        <img src="img/badge.png" alt="Red badge"/>
+                        <p>Complete these steps to score the <strong>Let's Code Level 1</strong> badge!</p>
+                    </div>
+                </div>
+            </div>
+
+            {{> template_view_footlinks }}
+
+        </div>
+    </div>
+
+</div>

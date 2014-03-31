@@ -1,0 +1,66 @@
+<div class="profile-page">
+
+    <div class="row heading">
+        <div class="medium-12 columns text-center">
+            <h2>You're in! Your new username is:</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-8 medium-centered columns">
+
+            <div class="row username">
+                <div class="medium-12 medium-centered columns text-center">
+                    <span>{{username}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="medium-12 columns">
+                    <h3 class="important">It's very important that you remember this name</h3>
+                </div>
+            </div>
+
+            <div class="row tips">
+                <div class="medium-12 columns">
+                    <p>Without it, you won't be able to access your work later on.
+                    <strong>Be sure to write it down and keep it in a safe place</strong>.</p>
+                    <p>We can email this username to you also. We won't store your email address
+                    once we've sent it.</p>
+                    <p><strong>Please enter your email address:</strong></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="medium-12 columns text-right">
+
+                    <form class="email">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <input type="text" placeholder="email address for reminder" />
+                            </div>
+                            <div class="large-12 columns form-error text-left">
+                                <p>That doesn't appear to be a valid email. Please check your spelling.</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="medium-6 columns text-center">
+                                <a class="skip-email" href="#">Skip email</a>
+                            </div>
+                            <div class="medium-6 columns text-right">
+                                <input type="submit" class="tiny small round button green submit" value="Email me my username" />
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            {{> template_view_footlinks }}
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+{
+    "author_id": null,
+    "name": "Long Jump",
+    "description": "",
+    "stage": {
+        "width": 800,
+        "height": 450,
+        "background": "/img/game/racetrack.png",
+        "entities": [],
+        "is_active": true
+    },
+
+    "updated_at": "",
+    "is_featured": ""
+}

@@ -1,0 +1,11 @@
+{
+	"db": {
+		"mongodbURI": "mongodb://localhost/lets-code"
+	},
+	"express": {
+		"port": 9000
+	},
+  "swagger": {
+    "url": "http://localhost:9000/api"
+  }
+}

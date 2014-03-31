@@ -1,0 +1,61 @@
+$popup-arrow-size: 20px
+$popup-border-width: 6px
+$popup-border-col: $col-ui-blue
+$popup-dropdown-border-col: $col-ui-green
+$popup-bg-col: white
+$popup-border-radius: 20px
+$popup-width: 300px
+$popup-width-small: 250px
+
+.popup
+
+    background: $popup-bg-col
+    border: $popup-border-width solid $popup-border-col
+
+    &.dropdown-popup
+        @include cssarrow-top($popup-arrow-size, $popup-border-width, $popup-dropdown-border-col, $popup-bg-col)
+
+    position: absolute !important
+    display: none
+    width: $popup-width
+    z-index: 99
+    margin-top: $popup-arrow-size
+    margin-left: -$popup-width / 2
+    padding: 15px
+    border-radius: $popup-border-radius
+
+    &.open
+        display: block
+
+    &.center
+        left: 50%
+        margin-left: -$popup-width / 2
+        top: 50%
+        margin-top: -100px
+
+    &.small
+        width: $popup-width-small
+        margin-left: -$popup-width-small / 2
+        &.center
+            margin-left: -$popup-width-small / 2
+
+    p
+        margin: 0.5rem 0
+        font-size: $font-size-small
+
+    button.left
+        float: left
+
+    button.right
+        float: right
+
+
+// Overrides
+.top-bar .top-bar-section ul li .popup
+    button
+        position: static
+        top: auto
+
+#user-drop
+    width: 220px
+    margin-left: -110px

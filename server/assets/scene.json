@@ -1,0 +1,82 @@
+{
+    "name": "Scene",
+    "default_instance_id": "myScene",
+    "description": "The world itself",
+
+    "properties": [
+
+        {
+            "name": "id",
+            "value": "myScene",
+            "comment": "The identifier for this scene",
+            "type": "string",
+            "read_only": true
+        },
+
+        {
+            "name": "left",
+            "value": 0,
+            "comment": "The horizontal position of the scene",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "top",
+            "value": 0,
+            "comment": "The vertical position of the scene",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "width",
+            "value": 800,
+            "comment": "Width of the scene",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "height",
+            "value": 450,
+            "comment": "Height of the scene",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "sprite",
+            "value":
+            {
+                "frames":
+                {
+                    "width": 800,
+                    "height": 450,
+                    "numFrames": 1,
+                    "regX": 0,
+                    "regY": 0
+                },
+                "animations": {},
+                "images": [
+                    "/img/game/racetrack.jpg"
+                ]
+            },
+            "comment": "Sprite object of this entity",
+            "hidden": true
+        }
+    ],
+
+    "methods": [],
+
+    "events": [
+
+        {
+            "name": "onStart",
+            "listeners": [],
+            "comment": null
+        }
+
+    ]
+
+}

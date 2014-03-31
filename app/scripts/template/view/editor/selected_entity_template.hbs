@@ -1,0 +1,27 @@
+<div class="edit-label">
+    <a class="deleteInstance">X</a>
+    <strong>{{id}}</strong>
+</div>
+
+<div class="left-bracket"></div>
+<div class="right-bracket"></div>
+
+<ul class="no-bullet edit-methods">
+
+    {{#each methods}}
+        <li class="method" data-value="{{name}}">{{name}}
+            <div class="comment"> {{comment}}</div>
+        </li>
+    {{/each}}
+
+</ul>
+
+<ul class="no-bullet edit-events">
+
+    {{#each events}}
+        <li class="method" data-value="{{name}}">{{name}}
+            <div class="comment">{{comment}}</div>
+        </li>
+    {{/each}}
+
+</ul>

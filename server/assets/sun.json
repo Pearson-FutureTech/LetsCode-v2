@@ -1,0 +1,94 @@
+{
+    "name": "Sun",
+    "default_instance_id": "mySun",
+    "description": "A star with emotions",
+
+    "properties": [
+
+        {
+            "name": "id",
+            "value": "mySun",
+            "comment": "The identifier for this sun",
+            "type": "string",
+            "read_only": true
+        },
+
+        {
+            "name": "left",
+            "value": 586,
+            "comment": "The horizontal position of this sun",
+            "type": "int"
+        },
+
+        {
+            "name": "top",
+            "value": 0,
+            "comment": "The vertical position of this sun",
+            "type": "int"
+        },
+
+        {
+            "name": "width",
+            "value": 214,
+            "comment": "Width of this sun",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "height",
+            "value": 130,
+            "comment": "Height of this sun",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "sprite",
+            "value": {
+                "frames": {
+                    "width": 214,
+                    "height": 130,
+                    "numFrames": 2,
+                    "regX": 0,
+                    "regY": 0
+                },
+                "animations": {
+                    "smile": {
+                        "frames": [1],
+                        "next": null
+                    },
+                    "surprised": {
+                        "frames": [0],
+                        "next": null
+                    }
+                },
+                "images": [
+                    "/img/game/sun.png"
+                ]
+            },
+            "comment": "Sprite object of this entity",
+            "hidden": true
+        }
+
+    ],
+
+    "methods": [
+
+        {
+            "name": "smile",
+            "body": "this.animate('smile');",
+            "comment": null
+        },
+
+        {
+            "name": "lookSurprised",
+            "body": "this.animate('surprised');",
+            "comment": null
+        }
+
+    ],
+
+    "events": []
+
+}

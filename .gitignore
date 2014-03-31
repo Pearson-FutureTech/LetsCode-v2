@@ -1,0 +1,10 @@
+node_modules
+app/bower_components
+temp
+.sass-cache
+.idea/
+.idea/*
+letsc.de.iml
+.env
+.tmp
+server/config/local.json

@@ -1,0 +1,33 @@
+<div class="tutorial">
+    <ul class="tutorial-steps">
+        {{#each tutorial.steps}}
+            <li class="{{#each stepClasses}}step-{{ this }} {{/each}}"{{#if description}} data-description="{{description}}"{{/if}}>
+                <div class="content{{#if arrowDirection}} arrow-{{arrowDirection}}{{/if}}"{{#if width}} style="width:{{width}}"{{/if}}>
+                    {{{ contents }}}
+                    {{#unless actionToProceed}}
+                        {{#ifCond @index '<' ../../lastStepIndex}}
+                            {{#ifCond @index '===' 0}}
+                                <button class="continue">Start</button>
+                            {{else}}
+                                <button class="continue">Continue</button>
+                            {{/ifCond}}
+                        {{else}}
+                            <button class="continue">Back to Tutorials</button>
+                        {{/ifCond}}
+                    {{/unless}}
+                </div>
+                {{#if substeps}}
+                    <ul class="substeps">
+                        {{#each substeps}}
+                            <li class="substep {{#if stepClass}}step-{{ stepClass }}{{/if}}{{#if arrowDirection}} arrow-{{arrowDirection}}{{/if}}">
+                                <div class="content"{{#if width}} style="width:{{width}}"{{/if}}>
+                                    {{{ contents }}}
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+</div>

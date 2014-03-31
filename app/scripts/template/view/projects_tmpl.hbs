@@ -1,0 +1,70 @@
+<div class="projects-page list-page">
+    <div class="row">
+        <div class="medium-11 medium-centered columns">
+
+			<div class="row">
+				<dl class="tabs" data-tab>
+					<dd><a href="/tutorials" data-clientside="true">Tutorials</a></dd>
+					<dd class="active"><a href="/projects" data-clientside="true">My projects</a></dd>
+				</dl>
+			</div>
+
+            <div class="row">
+                <button id="btn-create-project" class="tiny round green disabled">Create a New Project</button>
+            </div>
+
+            <div class="row">
+                <div data-alert class="alert-box info">
+                    <p>Run the <a href="/tutorials" data-clientside="true">tutorials</a> and use the <em>Save As Project</em> feature
+                    to add projects here.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="panel-projects">
+
+                    {{#each user.projects}}
+                        {{! Exclude projects that were created implicilty from a tutorial }}
+                        {{#unless tutorial_id}}
+                            <div class="item">
+                                <div class="row">
+                                    <div class="small-12 medium-3 columns">
+                                        <img class="th radius" src="img/tutorials/tutorial-1-340x150.png" />
+                                    </div>
+                                    <div class="small-12 medium-6 columns text-left">
+                                        <p class="title">{{name}}</p>
+                                        <p class="last-modified">Last modified {{formatDate updated_at}}</p>
+                                    </div>
+                                    <div class="small-12 medium-3 columns">
+                                        <ul class="inline-list">
+                                            <li>
+                                                <a href="#" class="tiny button round green" data-action="open" data-projectId="{{_id}}">Open</a>
+                                            </li>
+                                        </ul>
+                                        <div class="other-operations">
+                                            <a href="#" data-action="delete" data-projectId="{{_id}}">delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/unless}}
+                    {{/each}}
+
+                </div>
+            </div>
+
+            {{> template_view_footlinks }}
+        </div>
+    </div>
+
+    <div id="popup-confirm-delete" class="popup center">
+
+        <h4>Are you sure you want to delete your project?</h4>
+
+        <button class="tiny round left" data-action="cancelDelete">Cancel</button>
+
+        <button class="tiny round orange right" data-action="confirmDelete">Delete</button>
+
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+<ul class="uneditable-mode">
+    <li>
+        <button class="tiny round green play" id="btn-play" data-control="preview-mode">Play</button>
+    </li>
+    {{#unless isLoggedIn}}
+        <li>
+            <a data-control="sign-in-sign-up" class="button tiny round login green" href="/">Sign In/Sign Up</a>
+        </li>
+    {{/unless}}
+</ul>

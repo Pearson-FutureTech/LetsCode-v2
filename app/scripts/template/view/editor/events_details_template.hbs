@@ -1,0 +1,10 @@
+<div class="event-details">
+	<h3>{{entityId}} events</h3>
+	<p>Events represent things that happen, such as the click of button. Events can be linked to methods to make them trigger things.</p>
+	{{#each events}}
+		<div class="event" data-element="event" data-event="{{name}}">
+			<div class="name">{{name}}</div>
+			<div class="description">{{comment}}</div>
+		</div>
+	{{/each}}
+</div>

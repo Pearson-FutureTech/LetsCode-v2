@@ -1,0 +1,56 @@
+<ul>
+    <li>
+        <ul class="button-group round">
+            <li><a href="#" id="btn-edit" class="button tiny" data-control="edit">Edit</a></li>
+            <li><a href="#" id="btn-play" class="button tiny inactive" data-control="play">Play</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <button data-dropdown="project-drop" class="tiny green round share">Project</button>
+
+        <div id="project-drop" data-dropdown-content class="popup dropdown-popup small content">
+
+            <div class="popup-screen current" data-screen="project">
+
+                <button id="btn-share" data-control="share" class="round tiny green">Share Project</button>
+                <p>Share your project so that others can play it</p>
+
+                <button id="btn-saveas" data-control="save-as" class="round tiny green">Save as new Project</button>
+                <p>Save a copy of this project to your <strong>My Projects</strong> space</p>
+
+            </div>
+
+            <div class="popup-screen" data-screen="share">
+
+                <h6>Share Project</h6>
+
+                <input id="project-url" value="{{projectURL}}"/>
+
+                {{#if isFlashEnabled}}
+                    <a href="#" class="button tiny round green copy" data-clipboard-target="project-url" id="copy-project-url">Copy</a>
+                    <p class="copied">Copied to clipboard</p>
+                {{else}}
+                    <p>Please copy the URL manually</p>
+                {{/if}}
+
+            </div>
+
+            <div class="popup-screen" data-screen="save-as">
+
+                <h6>Save as new Project</h6>
+
+                <input id="project-name" value="" placeholder="Your project name"/>
+
+                <button id="project-save" data-control="save-as-confirm" class="tiny disabled round save">Save</button>
+
+            </div>
+
+        </div>
+
+    </li>
+
+    <li>
+        <button id="btn-close" data-control="close" class="close button tiny round">Close</button>
+    </li>
+</ul>

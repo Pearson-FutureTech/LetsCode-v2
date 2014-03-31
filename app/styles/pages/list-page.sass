@@ -1,0 +1,56 @@
+.list-page
+    padding-top: 1rem
+    padding-bottom: 1rem
+    color: $col-ui-grey
+
+    .tabs
+        margin-bottom: rem-calc(30) !important
+
+    .tabs dd a
+        font-size: $font-size-subheader
+        font-weight: 600
+        color: $col-ui-ltgrey
+        padding-left: 0
+        border-bottom: 6px solid $col-ui-ltgrey
+
+    .tabs dd.active a
+        color: $col-ui-dkblue
+        font-weight: 900
+        border-bottom: 6px solid $col-ui-dkblue
+
+    .item
+        margin-top: 15px
+        padding: 0.5rem 1rem
+
+        .details
+            max-height: 400px
+            overflow: hidden
+            transition: max-height 0.3s ease-in-out
+            -webkit-transition: max-height 0.3s ease-in-out
+            -moz-transition: max-height 0.3s ease-in-out
+
+    .item
+        cursor: pointer
+
+    .title,
+    .inline-list
+        margin-bottom: 0.5rem
+        font-weight: bold
+
+    .inline-list
+        margin-top: 0.5rem
+        float: right
+
+    img
+        margin-bottom: 1rem
+
+    .description
+        font-size: $font-size-small
+        margin-top: 1rem
+        color: $col-ui-grey
+
+    @media #{$medium-up}
+
+        .description
+            margin-top: 0
+

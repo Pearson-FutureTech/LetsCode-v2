@@ -1,0 +1,97 @@
+{
+    "name": "Button",
+    "default_instance_id": "myButton",
+    "description": "You can click it to make things happen",
+
+    "properties": [
+
+        {
+            "name": "id",
+            "value": "myButton",
+            "comment": "The identifier for this button",
+            "type": "string",
+            "read_only": true
+        },
+
+        {
+            "name": "left",
+            "value": 70,
+            "comment": "The horizontal position of this button",
+            "type": "int"
+        },
+
+        {
+            "name": "top",
+            "value": 70,
+            "comment": "The vertical position of this button",
+            "type": "int"
+        },
+
+        {
+            "name": "width",
+            "value": 150,
+            "comment": "Width of this button",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "height",
+            "value": 41,
+            "comment": "Height of this button",
+            "type": "int",
+            "read_only": true
+        },
+
+        {
+            "name": "sprite",
+            "value": {
+                "frames": {
+                    "width": 150,
+                    "height": 41,
+                    "numFrames": 2,
+                    "regX": 0,
+                    "regY": 0
+                },
+                "animations": {
+                    "normal": {
+                        "frames": [0],
+                        "next": null
+                    },
+                    "clicked": {
+                        "frames": [1],
+                        "next": null
+                    }
+                },
+                "images": [
+                    "/img/game/button-go.png"
+                ]
+            },
+            "comment": "The 'sprite' defines the frames of animation",
+            "hidden": true
+        }
+
+    ],
+
+
+    "methods": [],
+
+    "events": [
+
+        {
+            "name": "onClick",
+            "listeners": [
+            ],
+            "comment": null
+        },
+
+        {
+            "name": "onHover",
+            "listeners": [
+            ],
+            "comment": null
+        }
+
+    ]
+
+}

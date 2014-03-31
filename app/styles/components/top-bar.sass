@@ -1,0 +1,115 @@
+.top-bar
+    .logo
+        padding: 8px
+
+    .top-bar-section ul li
+
+        button
+            position: relative
+            top: 7px
+
+        &.help a
+            background: $col-ui-dkorange
+            &:hover
+                background: $col-ui-orange
+
+        #btn-edit,
+        #btn-play
+            background: $col-ui-blue
+            &:hover
+                background: $col-ui-blue
+            &.inactive
+                cursor: default
+                background: $col-ui-dkblue
+                &:hover
+                    background: $col-ui-blue
+
+        & > a.button
+            padding-right: 12px
+            padding-left: 12px
+            font-size: $font-size-norm
+            background: $col-ui-dkblue
+            &:hover
+                background: $col-ui-blue
+
+            &.green
+                background: $col-ui-dkgreen
+                &:hover
+                    background: $col-ui-green
+
+        &.controls
+            li
+                margin-right: 10px
+
+            .button-group li
+                margin-right: 0
+
+        .user a
+            font-size: $font-size-norm
+            color: $col-ui-grey-xxlight
+            padding: 0
+
+            // Additional selector is to override Foundation defaults
+            &:not(.button)
+                background: none
+
+                &:hover
+                    background: none
+
+        &.login-logout a
+            margin-right: 10px
+
+            &.close
+                margin-right: 5px
+
+        .uneditable-mode
+            margin-right: 10px
+
+
+
+.popup
+    // Foundation override
+    input,
+    .button
+        position: static
+
+    .popup-screen
+        display: none
+        &.current
+            display: block
+
+
+#project-drop
+    input
+        display: block
+        width: 100%
+
+    [data-control="share"],
+    [data-control="save-as"]
+        width: 100%
+
+    a.copy,
+    button.save
+        margin-top: 0.5rem
+        width: 80px
+
+    .copied
+        visibility: hidden
+        font-size: $font-size-norm
+
+#tutorial-panel
+    div
+        position: fixed
+        top: $top-bar-height
+        background: rgba(0, 0, 0, 0.5)
+        width: 100%
+        height: 36px
+        padding: 6px
+        z-index: 1
+        color: $white
+
+        button
+            float: right
+            font-size: $font-size-norm
+            padding-top: 0.3rem
+            padding-bottom: 0.3rem
