@@ -92,6 +92,18 @@ See the [Docs](docs/index.md) for information on:
 Apache v2. See [LICENSE.txt](LICENSE.txt).
 
 
+## Thanks
+
+Special thanks to everyone who contributed to the development, including:
+
+ - Edward Ruchevits
+ - Gareth Edwards
+ - Phil Powell
+ - Adaptive Lab
+
+And to all who have provided feedback and advice.
+
+
 ## Questions/Feedback
 
 Email future_tech [at] pearson.com.
