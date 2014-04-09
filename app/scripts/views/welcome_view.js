@@ -7,7 +7,8 @@ define([
     'underscore',
     'communicator',
     'backbone',
-    'jquery'
+    'jquery',
+    'vendor/jquery.cookiebar'
 ], function(
     _,
     Communicator,
@@ -28,6 +29,11 @@ define([
                 'onLoginError',
                 'onSignUpError'
             );
+
+            $.cookieBar({
+                message: 'We use cookies for analytics and to remember your login',
+                acceptText: 'OK'
+            });
 
         },
 
