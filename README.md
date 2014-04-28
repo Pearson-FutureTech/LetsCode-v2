@@ -97,7 +97,7 @@ See the [Docs](docs/index.md) for information on:
 - [Projects](docs/02_projects.md)
 - [Entities](docs/03_entities.md)
 - [Methods](docs/04_methods.md)
-- [Tutorials](docs/05_methods.md)
+- [Tutorials](docs/05_tutorials.md)
 
 
 ## License
