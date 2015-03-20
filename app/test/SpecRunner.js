@@ -30,7 +30,7 @@ require.config({
 
     paths: {
 
-        jquery: '../bower_components/jquery/jquery',
+        jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone-amd/backbone',
         underscore: '../bower_components/underscore-amd/underscore',
 

@@ -19,14 +19,27 @@ Check out the [live site](http://letsc.de) to see how it works.
 ### First time run
 
 1. Clone this repository
+
 2. Make sure you have [grunt-cli installed](http://gruntjs.com/getting-started)
+
 3. Run `npm install`
+
 4. Run `bower install`
-5. To use the grunt-contrib-compass plugin you will need to make sure you have the
+
+5. Add the following environment variables:
+
+    LETS\_CODE\_COOKIE\_SECRET="some string you can set to whatever you want"
+    LETS\_CODE\_SESSION\_SECRET="another string that can be whatever you want"
+
+(If you don't know how to do this, see this [superuser post](http://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them))
+
+6. To use the grunt-contrib-compass plugin you will need to make sure you have the
 Compass Ruby gem installed. Follow the [instructions in the plugins readme](https://github.com/gruntjs/grunt-contrib-compass)
 to see how.
-6. Run `grunt seed` to pre-seed the database
-7. Run `grunt` to run the site
+
+7. Run `grunt seed` to pre-seed the database
+
+8. Run `grunt` to run the site
 
 ### Issues
 
@@ -84,7 +97,7 @@ See the [Docs](docs/index.md) for information on:
 - [Projects](docs/02_projects.md)
 - [Entities](docs/03_entities.md)
 - [Methods](docs/04_methods.md)
-- [Tutorials](docs/05_methods.md)
+- [Tutorials](docs/05_tutorials.md)
 
 
 ## License

@@ -31,7 +31,7 @@ define([
             );
 
             $.cookieBar({
-                message: 'We use cookies for analytics and to remember your login',
+                message: 'This site uses cookies. <a href="/help#privacy-policy">Click here for more info</a>',
                 acceptText: 'OK'
             });
 
