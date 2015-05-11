@@ -308,6 +308,12 @@ module.exports = function(grunt) {
             }
         },
 
+        bower: {
+            install: {
+                targetDir: './app/bower_components'
+            }
+        },
+
 
         shell: {
 
@@ -392,6 +398,7 @@ module.exports = function(grunt) {
     });
 
     // Load NPM Grunt tasks
+    grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -458,6 +465,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'test',
         'clean',
+        'bower',
         'compass:dist',
         'imagemin',
         'requirejs',

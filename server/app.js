@@ -3,7 +3,11 @@
 var express = require('express'),
     passport = require('passport'),
     path = require('path'),
-    swagger = require('swagger-node-express');
+    swagger = require('swagger-node-express'),
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    cookieSession = require('cookie-session'),
+    methodOverride = require('method-override');
 
 var config = require('./config'),
     documentationModels = require('./models/docs'),
@@ -19,10 +23,11 @@ var cookieSecret = config.get('LETS_CODE_COOKIE_SECRET'),
 var serverPort = config.get('PORT') || config.get('express:port');
 
 var app = express(),
-    rootPath;
+    rootPath,
+    env = process.env.NODE_ENV || 'development';
 
 // CSS files are located in .tmp/styles after being compiled from SASS
-app.configure('development', function () {
+if( env === 'development' ) {
 
     console.log('Running in development');
 
@@ -31,12 +36,11 @@ app.configure('development', function () {
     app.use(express.static(rootPath));
     app.use(express.static(rootPath + '/.tmp'));
 
-    app.use(express.logger('dev'));
+    //app.use(express.logger('dev'));
 
-});
+} else if( env === 'staging' ) {
 
-// All static files for production are built to the dist directory
-app.configure('staging', function () {
+    // All static files for production are built to the dist directory
 
     console.log('Running in staging');
 
@@ -44,37 +48,33 @@ app.configure('staging', function () {
 
     app.use(express.static(rootPath));
 
-});
-
-// All static files for production are built to the dist directory
-app.configure('production', function () {
+} else if( env === 'production' ) {
 
     console.log('Running in production');
 
     rootPath = path.join(__dirname, '../dist');
 
     app.use(express.static(rootPath));
-});
+}
 
-app.configure(function () {
-    //app.use(partials());
-    app.set('base', '/');
-    app.set('port', serverPort);
-    app.set('views', rootPath);
-    app.set('view engine', 'ejs');
-    app.use(express.bodyParser());
-    app.use(express.cookieParser( cookieSecret ));
-    app.use(express.cookieSession({
-        secret: sessionSecret,
-        cookie: {
-            maxAge: (30 * 24 * 60 * 60 * 1000)
-        }
-    }));
-    app.use(express.methodOverride());
-    app.use(passport.initialize());
-    app.use(passport.session());
-    app.use(app.router);
-});
+app.set('base', '/');
+app.set('port', serverPort);
+app.set('views', rootPath);
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser( cookieSecret ));
+app.use(cookieSession({
+    secret: sessionSecret,
+    cookie: {
+        maxAge: (30 * 24 * 60 * 60 * 1000)
+    }
+}));
+
+app.use(methodOverride());
+app.use(passport.initialize());
+app.use(passport.session());
+//app.use(app.router);
 
 // Homepage and Help pages are special - we render them server-side
 app.get('/', function(req, res) {
