@@ -20,12 +20,15 @@
     "createjs-tweenjs": "0.5.0",
     "zeroclipboard": "~1.2.1",
     "almond": "~0.2.6",
-    "foundation": "~5.0.2",
+    "foundation": "~5.4.4",
     "ace-builds": "~1.1.1",
     "js-beautify": "~1.4.2"
   },
   "directory": "bower_components",
   "devDependencies": {
     "squire": "*"
+  },
+  "resolutions": {
+    "modernizr": ">= 2.7.2"
   }
 }
